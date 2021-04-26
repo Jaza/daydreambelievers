@@ -15,6 +15,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-tinacms-github": "^0.31.0-alpha.4",
+    "react-tinacms-inline": "^0.40.0",
     "styled-components": "^5.1.0",
     "tinacms": "^0.31.0-alpha.4"
   },
