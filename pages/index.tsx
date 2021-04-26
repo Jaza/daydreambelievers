@@ -7,6 +7,7 @@ import {
   useGithubJsonForm,
   useGithubToolbarPlugins,
 } from 'react-tinacms-github'
+import { InlineForm, InlineText } from 'react-tinacms-inline'
 import { usePlugin } from 'tinacms'
 import { GetStaticProps } from 'next'
 
@@ -32,12 +33,11 @@ export default function Home({ file, preview }) {
       </Head>
 
       <main>
-        <h1 className="title">
-          {/*
-           ** Render the title from `home.json`
-           */}
-          {data.title}
-        </h1>
+        <InlineForm form={form}>
+          <h1 className="title">
+            <InlineText name="title" />
+          </h1>
+        </InlineForm>
 
         <p className="description">
           Get started by editing <code>pages/index.js</code>
