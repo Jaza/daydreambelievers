@@ -5,8 +5,8 @@ import {
 } from 'react-tinacms-github'
 import { usePlugin } from 'tinacms'
 import { GetStaticProps } from 'next'
-import Container from '../components/container'
-import HomeTitle from '../components/home-title'
+import Hero from '../components/hero'
+import Layout from '../components/layout'
 
 export default function Home({ file, preview }) {
   const formOptions = {
@@ -20,9 +20,9 @@ export default function Home({ file, preview }) {
   useGithubToolbarPlugins()
 
   return (
-    <Container {...pageData}>
-      <HomeTitle form={form} />
-    </Container>
+    <Layout {...pageData}>
+      <Hero form={form} {...pageData} />
+    </Layout>
   )
 }
 

@@ -1,3 +1,7 @@
+import '../styles/libs/startbootstrap-freelancer/css/bootstrap.css'
+import '../styles/libs/startbootstrap-freelancer/css/freelancer.css'
+import '../styles/libs/font-awesome4/css/font-awesome.min.css'
+import '../styles/index.css'
 import App from 'next/app'
 import { TinaCMS, TinaProvider } from 'tinacms'
 import {
@@ -40,8 +44,8 @@ export default class Site extends App {
           onLogout={onLogout}
           error={pageProps.error}
         >
-          <EditLink cms={this.cms} />
           <Component {...pageProps} />
+          <EditLink cms={this.cms} />
         </TinacmsGithubProvider>
       </TinaProvider>
     )
