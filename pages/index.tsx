@@ -1,10 +1,13 @@
+import React from 'react'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import {
   useGithubJsonForm,
   useGithubToolbarPlugins,
 } from 'react-tinacms-github'
+import { InlineForm, InlineBlocks } from 'react-tinacms-inline'
 import { usePlugin } from 'tinacms'
 import { GetStaticProps } from 'next'
+import { galleryBlock } from '../components/gallery'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 
@@ -20,9 +23,12 @@ export default function Home({ file, preview }) {
   useGithubToolbarPlugins()
 
   return (
-    <Layout {...pageData}>
-      <Hero form={form} {...pageData} />
-    </Layout>
+    <InlineForm form={form} initialStatus="active">
+      <Layout {...pageData}>
+        <Hero form={form} {...pageData} />
+        <InlineBlocks name="blocks" blocks={HOME_BLOCKS} />
+      </Layout>
+    </InlineForm>
   )
 }
 
@@ -48,4 +54,8 @@ export const getStaticProps: GetStaticProps = async function ({
       },
     },
   }
+}
+
+const HOME_BLOCKS = {
+  gallery: galleryBlock,
 }

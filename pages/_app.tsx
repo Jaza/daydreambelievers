@@ -2,6 +2,7 @@ import '../styles/libs/startbootstrap-freelancer/css/bootstrap.css'
 import '../styles/libs/startbootstrap-freelancer/css/freelancer.css'
 import '../styles/libs/font-awesome4/css/font-awesome.min.css'
 import '../styles/index.css'
+import React from 'react'
 import App from 'next/app'
 import { TinaCMS, TinaProvider } from 'tinacms'
 import {
