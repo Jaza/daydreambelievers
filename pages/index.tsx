@@ -23,7 +23,7 @@ export default function Home({ file, preview }) {
   useGithubToolbarPlugins()
 
   return (
-    <InlineForm form={form} initialStatus="active">
+    <InlineForm form={form}>
       <Layout {...pageData}>
         <Hero form={form} {...pageData} />
         <InlineBlocks name="blocks" blocks={HOME_BLOCKS} />
