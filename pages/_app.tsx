@@ -5,11 +5,8 @@ import '../styles/index.css'
 import React from 'react'
 import App from 'next/app'
 import { TinaCMS, TinaProvider } from 'tinacms'
-import {
-  GithubClient,
-  GithubMediaStore,
-  TinacmsGithubProvider,
-} from 'react-tinacms-github'
+import { GithubClient, TinacmsGithubProvider } from 'react-tinacms-github'
+import { NextS3MediaStore } from 'next-tinacms-s3'
 
 export default class Site extends App {
   cms: TinaCMS
@@ -30,7 +27,11 @@ export default class Site extends App {
       apis: {
         github,
       },
-      media: new GithubMediaStore(github),
+      media: new NextS3MediaStore({
+        s3Bucket: process.env.S3_UPLOAD_BUCKET,
+        s3ReadUrl: process.env.S3_READ_URL,
+        s3ServerSideEncryption: process.env.S3_SERVER_SIDE_ENCRYPTION
+      }),
       sidebar: props.pageProps.preview,
       toolbar: props.pageProps.preview,
     })
