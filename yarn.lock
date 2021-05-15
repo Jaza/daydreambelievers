@@ -1753,7 +1753,7 @@ next-tinacms-markdown@^0.40.1:
 
 "next-tinacms-s3@github:Jaza/next-tinacms-s3":
   version "0.40.1"
-  resolved "https://codeload.github.com/Jaza/next-tinacms-s3/tar.gz/ec8fea1e4f01b5b2a8606f6142f167bc7cad9e8b"
+  resolved "https://codeload.github.com/Jaza/next-tinacms-s3/tar.gz/031a652ab480d632f0e001098c03c5740219576a"
   dependencies:
     "@tinacms/core" "^0.39.0"
     aws-sdk "^2.903.0"
