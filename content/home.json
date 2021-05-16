@@ -5,6 +5,10 @@
     {
       "_template": "gallery",
       "title": "Gallery"
+    },
+    {
+      "_template": "gallery",
+      "title": "Gallery"
     }
   ]
 }
