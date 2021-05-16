@@ -1,4 +1,10 @@
 {
   "title": "The Daydream Believers",
-  "heroImage": "/hero-image/FB_IMG_1469839784721-2016-07-30-00-53-04.jpg"
+  "heroImage": "/hero-image/FB_IMG_1469839784721-2016-07-30-00-53-04.jpg",
+  "blocks": [
+    {
+      "_template": "gallery",
+      "title": "Gallery"
+    }
+  ]
 }
