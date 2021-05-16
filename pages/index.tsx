@@ -15,7 +15,7 @@ import { galleryBlock } from '../components/gallery'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 
-export default function Home({ file, preview }) {
+export default function Home({ file, preview, s3ReadUrl }) {
   const formOptions = {
     label: 'Home Page',
     fields: [
@@ -32,7 +32,7 @@ export default function Home({ file, preview }) {
   return (
     <InlineForm form={form}>
       <Layout {...pageData}>
-        <Hero form={form} {...pageData} />
+        <Hero form={form} s3ReadUrl={s3ReadUrl} {...pageData} />
         <InlineBlocks name="blocks" blocks={HOME_BLOCKS} />
       </Layout>
     </InlineForm>

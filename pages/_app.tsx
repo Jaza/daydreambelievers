@@ -39,6 +39,7 @@ export default class Site extends App {
 
   render() {
     const { Component, pageProps } = this.props
+    pageProps.s3ReadUrl =  process.env.S3_READ_URL
     return (
       <TinaProvider cms={this.cms}>
         <TinacmsGithubProvider
