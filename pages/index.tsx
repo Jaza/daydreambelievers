@@ -18,7 +18,10 @@ import Layout from '../components/layout'
 export default function Home({ file, preview }) {
   const formOptions = {
     label: 'Home Page',
-    fields: [{ name: 'title', component: 'text' }],
+    fields: [
+      { name: 'title', component: 'text' },
+      { name: 'heroImage', component: 'image' },
+    ],
   }
 
   const [pageData, form] = useGithubJsonForm(file, formOptions)
