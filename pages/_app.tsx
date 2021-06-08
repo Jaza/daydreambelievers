@@ -6,7 +6,13 @@ import React from 'react'
 import App from 'next/app'
 import { TinaCMS, TinaProvider } from 'tinacms'
 import { GithubClient, TinacmsGithubProvider } from 'react-tinacms-github'
-import { NextS3MediaStore } from 'next-tinacms-s3'
+import {
+  S3_SESSION_TOKEN,
+  S3MediaStore,
+  S3Provider,
+  S3StsClient,
+} from 'react-tinacms-s3'
+import Cookies from 'js-cookie'
 
 export default class Site extends App {
   cms: TinaCMS
@@ -21,13 +27,18 @@ export default class Site extends App {
       baseRepoFullName: process.env.REPO_FULL_NAME, // e.g: tinacms/tinacms.org,
       baseBranch: process.env.BASE_BRANCH,
     })
+    const s3Sts = new S3StsClient(
+      process.env.S3_UPLOAD_REGION,
+      process.env.S3_UPLOAD_BUCKET,
+    )
 
     this.cms = new TinaCMS({
       enabled: !!props.pageProps.preview,
       apis: {
         github,
+        s3Sts,
       },
-      media: new NextS3MediaStore({
+      media: new S3MediaStore({
         s3Bucket: process.env.S3_UPLOAD_BUCKET,
         s3ReadUrl: process.env.S3_READ_URL,
         s3ServerSideEncryption: process.env.S3_SERVER_SIDE_ENCRYPTION
@@ -39,23 +50,27 @@ export default class Site extends App {
 
   render() {
     const { Component, pageProps } = this.props
-    pageProps.s3ReadUrl =  process.env.S3_READ_URL
     return (
       <TinaProvider cms={this.cms}>
         <TinacmsGithubProvider
-          onLogin={onLogin}
-          onLogout={onLogout}
+          onLogin={onGithubLogin}
+          onLogout={onGithubLogout}
           error={pageProps.error}
         >
-          <Component {...pageProps} />
-          <EditLink cms={this.cms} />
+          <S3Provider
+            onLogin={() => {}}
+            onLogout={() => {}}
+          >
+            <Component {...pageProps} />
+            <EditLink cms={this.cms} />
+          </S3Provider>
         </TinacmsGithubProvider>
       </TinaProvider>
     )
   }
 }
 
-const onLogin = async () => {
+const onGithubLogin = async () => {
   const token = localStorage.getItem('tinacms-github-token') || null
   const headers = new Headers()
 
@@ -66,14 +81,26 @@ const onLogin = async () => {
   const resp = await fetch(`/api/preview`, { headers: headers })
   const data = await resp.json()
 
-  if (resp.status == 200) window.location.href = window.location.pathname
-  else throw new Error(data.message)
+  if (resp.status == 200) {
+    if (Cookies.get(S3_SESSION_TOKEN)) {
+      window.location.href = window.location.pathname
+    }
+  }
+  else {
+    throw new Error(data.message)
+  }
 }
 
-const onLogout = () => {
+const onGithubLogout = () => {
   return fetch(`/api/reset-preview`).then(() => {
     window.location.reload()
   })
+}
+
+const onS3Login = () => {
+  if (Cookies.get(S3_SESSION_TOKEN)) {
+    window.location.href = window.location.pathname
+  }
 }
 
 export interface EditLinkProps {

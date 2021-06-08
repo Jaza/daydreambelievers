@@ -1,7 +1,7 @@
 import { InlineForm, InlineImage, InlineText } from 'react-tinacms-inline'
 import { useCMS } from 'tinacms'
 
-export default function Hero({ form, s3ReadUrl, title }) {
+export default function Hero({ form, title }) {
   const cms = useCMS()
 
   return (
@@ -12,16 +12,11 @@ export default function Hero({ form, s3ReadUrl, title }) {
             <InlineForm form={form}>
               <InlineImage
                 name="heroImage"
-                parse={media => `/${media.directory}/${media.filename}`}
+                parse={media => media.previewSrc}
                 uploadDir={() => '/hero-image/'}
               >
                 {props => <img
-                  src={
-                    cms.enabled ?
-                      props.src :
-                      `${s3ReadUrl}${s3ReadUrl.endsWith('/') ? '' : '/'}`
-                      + `${props.src.replace(/^\/+/, '')}`
-                  }
+                  src={props.src}
                   alt={title}
                   className="img-responsive img-circle img-lesswidth"
                 />}
