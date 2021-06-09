@@ -1,5 +1,17 @@
 {
   "title": "The Daydream Believers",
   "heroImage": "//daydreambelieversuploads.greenash.net.au/hero-image/FB_IMG_1469839784721-2016-07-30-00-53-04.jpg",
-  "blocks": []
+  "blocks": [
+    {
+      "_template": "gallery",
+      "title": "Gallery",
+      "galleryItems": [
+        {
+          "_template": "galleryItem",
+          "title": "New Gallery Item xoheeakbjs",
+          "photoImage": "//daydreambelieversuploads.greenash.net.au/gallery-item/FB_IMG_1471277189909-2016-08-15-16-09-35.jpg"
+        }
+      ]
+    }
+  ]
 }
