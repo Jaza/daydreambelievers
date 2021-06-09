@@ -51,21 +51,25 @@ export default class Site extends App {
   render() {
     const { Component, pageProps } = this.props
     return (
-      <TinaProvider cms={this.cms}>
-        <TinacmsGithubProvider
-          onLogin={onGithubLogin}
-          onLogout={onGithubLogout}
-          error={pageProps.error}
-        >
-          <S3Provider
-            onLogin={() => {}}
-            onLogout={() => {}}
+      <>
+        <TinaProvider cms={this.cms}>
+          <TinacmsGithubProvider
+            onLogin={onGithubLogin}
+            onLogout={onGithubLogout}
+            error={pageProps.error}
           >
-            <Component {...pageProps} />
-            <EditLink cms={this.cms} />
-          </S3Provider>
-        </TinacmsGithubProvider>
-      </TinaProvider>
+            <S3Provider
+              onLogin={() => {}}
+              onLogout={() => {}}
+            >
+              <Component {...pageProps} />
+              <EditLink cms={this.cms} />
+            </S3Provider>
+          </TinacmsGithubProvider>
+        </TinaProvider>
+        <script src="/startbootstrap-freelancer/js/jquery.js" />
+        <script src="/startbootstrap-freelancer/js/bootstrap.js" />
+      </>
     )
   }
 }

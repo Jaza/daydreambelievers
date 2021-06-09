@@ -12,6 +12,7 @@ import { InlineForm, InlineBlocks } from 'react-tinacms-inline'
 import { usePlugin } from 'tinacms'
 import { GetStaticProps } from 'next'
 import { galleryBlock } from '../components/gallery'
+import GalleryModals from '../components/gallery-modals'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 
@@ -31,10 +32,11 @@ export default function Home({ file, preview }) {
 
   return (
     <InlineForm form={form}>
-      <Layout {...pageData}>
-        <Hero form={form} {...pageData} />
+      <Layout title={pageData.title}>
+        <Hero form={form} title={pageData.title} />
         <InlineBlocks name="blocks" blocks={HOME_BLOCKS} />
       </Layout>
+      <GalleryModals blocks={pageData.blocks} />
     </InlineForm>
   )
 }

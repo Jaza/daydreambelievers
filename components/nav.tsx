@@ -1,6 +1,10 @@
+import { useCMS } from 'tinacms'
+
 export default function Nav({ title }) {
+  const cms = useCMS()
+  const navStyle = cms.enabled ? { marginTop: "62px" } : {}
   return (
-    <nav className="navbar navbar-default navbar-fixed-top" role="navigation">
+    <nav className="navbar navbar-default navbar-fixed-top" role="navigation" style={navStyle}>
       <div className="container">
         <div className="navbar-header page-scroll">
           <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
