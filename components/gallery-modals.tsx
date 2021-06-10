@@ -19,7 +19,7 @@ export default function GalleryModals({ blocks }) {
                 <div className="modal-body">
                   <h2>{galleryItem.title}</h2>
                   <hr className="star-light" />
-                  <img className="img-responsive img-centered" src={galleryItem.photoImage} alt={galleryItem.title} />
+                  <img className="img-responsive img-centered" src={galleryItem.image} alt={galleryItem.title} />
                   <div style={{ position: "relative" }}>
                     {galleryItem.content}
                   </div>

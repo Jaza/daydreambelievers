@@ -11,7 +11,7 @@ export function GalleryItem({ index, title }) {
           </div>
         </div>
         <InlineImage
-          name="photoImage"
+          name="image"
           parse={media => media.previewSrc}
           uploadDir={() => '/gallery-item/'}
         >
