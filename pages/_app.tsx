@@ -31,21 +31,24 @@ export default class Site extends App {
       process.env.S3_UPLOAD_REGION,
       process.env.S3_UPLOAD_BUCKET,
     )
+    const media = new S3MediaStore({
+      s3Bucket: process.env.S3_UPLOAD_BUCKET,
+      s3ReadUrl: process.env.S3_READ_URL,
+      s3ServerSideEncryption: process.env.S3_SERVER_SIDE_ENCRYPTION
+    })
 
-    this.cms = new TinaCMS({
+    const cms = new TinaCMS({
       enabled: !!props.pageProps.preview,
       apis: {
         github,
         s3Sts,
       },
-      media: new S3MediaStore({
-        s3Bucket: process.env.S3_UPLOAD_BUCKET,
-        s3ReadUrl: process.env.S3_READ_URL,
-        s3ServerSideEncryption: process.env.S3_SERVER_SIDE_ENCRYPTION
-      }),
+      media,
       sidebar: props.pageProps.preview,
       toolbar: props.pageProps.preview,
     })
+
+    this.cms = cms
   }
 
   render() {

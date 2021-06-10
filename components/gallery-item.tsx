@@ -1,7 +1,21 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
+import { useCMS } from 'tinacms'
 import { BlocksControls, InlineImage } from 'react-tinacms-inline'
 
 export function GalleryItem({ index, title }) {
+  const cms = useCMS()
+  const [editorRegistered, setEditorRegistered] = useState(false)
+
+  useEffect(() => {
+    if (!editorRegistered && cms.enabled) {
+      import("react-tinacms-editor").then(({ MarkdownFieldPlugin }) => {
+        cms.plugins.add(MarkdownFieldPlugin)
+        setEditorRegistered(true)
+      })
+    }
+  }, [cms.enabled])
+
   return (
     <a href={`#galleryModal${index + 1}`} className="portfolio-link" data-toggle="modal">
       <div className="caption">
@@ -47,7 +61,7 @@ export const galleryItemBlock = {
       {
         name: 'content',
         label: 'Content',
-        component: 'textarea',
+        component: 'markdown',
       },
       {
         name: 'eventName',

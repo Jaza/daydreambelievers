@@ -1,3 +1,5 @@
+import ReactMarkdown from 'react-markdown'
+
 export default function GalleryModals({ blocks }) {
   const galleryItems = blocks
     .filter(block => block && block.galleryItems)
@@ -21,20 +23,16 @@ export default function GalleryModals({ blocks }) {
                   <hr className="star-light" />
                   <img className="img-responsive img-centered" src={galleryItem.image} alt={galleryItem.title} />
                   <div style={{ position: "relative" }}>
-                    {galleryItem.content}
+                    <ReactMarkdown>
+                      {galleryItem.content}
+                    </ReactMarkdown>
                   </div>
                   <ul className="list-inline item-details">
                     <li>
-                      Event:
-                      <strong>
-                        {galleryItem.eventName}
-                      </strong>
+                      Event: <strong>{galleryItem.eventName}</strong>
                     </li>
                     <li>
-                      Date:
-                      <strong>
-                        {galleryItem.dateTaken}
-                      </strong>
+                      Date: <strong>{galleryItem.dateTaken}</strong>
                     </li>
                   </ul>
                   <button type="button" className="btn btn-default" data-dismiss="modal">
