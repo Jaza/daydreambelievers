@@ -4,16 +4,13 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
 var cbpAnimatedHeader = (function() {
 
-	var docElem = document.documentElement,
-		header = document.querySelector( '.navbar-fixed-top' ),
-		didScroll = false,
-		changeHeaderOn = 300;
+	var didScroll = false;
 
 	function init() {
 		window.addEventListener( 'scroll', function( event ) {
@@ -25,7 +22,9 @@ var cbpAnimatedHeader = (function() {
 	}
 
 	function scrollPage() {
-		var sy = scrollY();
+		var header = document.querySelector( '.navbar-fixed-top' ),
+		changeHeaderOn = 300,
+		sy = scrollY();
 		if ( sy >= changeHeaderOn ) {
 			classie.add( header, 'navbar-shrink' );
 		}
@@ -36,7 +35,7 @@ var cbpAnimatedHeader = (function() {
 	}
 
 	function scrollY() {
-		return window.pageYOffset || docElem.scrollTop;
+		return window.pageYOffset || document.documentElement.scrollTop;
 	}
 
 	init();
