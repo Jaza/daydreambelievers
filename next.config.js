@@ -11,7 +11,7 @@ module.exports = {
     S3_SERVER_SIDE_ENCRYPTION: process.env.S3_SERVER_SIDE_ENCRYPTION,
   },
   images: {
-    domains: [process.env.S3_READ_URL.replace('//', '')],
+    domains: ['daydreambelieversuploads.greenash.net.au'],
   },
   target: 'serverless',
 }
