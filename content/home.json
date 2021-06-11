@@ -28,6 +28,19 @@
           "content": "Singing away.",
           "eventName": "?",
           "dateTaken": "?"
+        },
+        {
+          "_template": "galleryItem",
+          "title": "New Gallery Item otmrxgyewt",
+          "image": "//daydreambelieversuploads.greenash.net.au/gallery-item/IMG_4323-2016-08-15-16-01-51.JPG"
+        },
+        {
+          "_template": "galleryItem",
+          "title": "The Believers",
+          "image": "//daydreambelieversuploads.greenash.net.au/gallery-item/daydream-believers-coverphoto-2015-08-11-03-14-08.jpg",
+          "content": "Looking happy and all posing for a photo!",
+          "eventName": "Some concert",
+          "dateTaken": "April 2014"
         }
       ]
     }
