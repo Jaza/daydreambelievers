@@ -70,8 +70,8 @@ export default class Site extends App {
             </S3Provider>
           </TinacmsGithubProvider>
         </TinaProvider>
-        <script src="/startbootstrap-freelancer/js/jquery.js" />
-        <script src="/startbootstrap-freelancer/js/bootstrap.js" />
+        <script src="/libs/startbootstrap-freelancer/js/jquery.js" />
+        <script src="/libs/startbootstrap-freelancer/js/bootstrap.js" />
       </>
     )
   }

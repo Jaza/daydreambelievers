@@ -215,6 +215,10 @@ section.success a.active {
     max-width: 400px;
 }
 
+.portfolio .portfolio-item .portfolio-link > div {
+    font-size: 1px;
+}
+
 .portfolio .portfolio-item .portfolio-link .caption {
     position: absolute;
     width: 100%;
@@ -224,6 +228,7 @@ section.success a.active {
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
+    z-index: 3;
 }
 
 .portfolio .portfolio-item .portfolio-link .caption:hover {
