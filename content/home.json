@@ -41,6 +41,53 @@
           "content": "Looking happy and all posing for a photo!",
           "eventName": "Some concert",
           "dateTaken": "April 2014"
+        },
+        {
+          "_template": "galleryItem",
+          "title": "New Gallery Item hrjevucpon",
+          "image": "//daydreambelieversuploads.greenash.net.au/gallery-item/IMG_3534-2016-03-17-06-14-52.JPG"
+        },
+        {
+          "_template": "galleryItem",
+          "title": "Two Ladies",
+          "image": "//daydreambelieversuploads.greenash.net.au/gallery-item/daydream-believers-twoladies-2015-08-11-03-17-56.jpg",
+          "content": "Doing their thing.",
+          "eventName": "?",
+          "dateTaken": "?"
+        },
+        {
+          "_template": "galleryItem",
+          "title": "Three Kids",
+          "image": "//daydreambelieversuploads.greenash.net.au/gallery-item/daydream-believers-threekids-2015-08-11-03-16-54.jpg",
+          "content": "Lookin' real happy and contented.",
+          "eventName": "?",
+          "dateTaken": "?"
+        },
+        {
+          "_template": "galleryItem",
+          "title": "Three Folks",
+          "image": "//daydreambelieversuploads.greenash.net.au/gallery-item/daydream-believers-threefolks-2015-08-11-03-18-29.jpg",
+          "content": "Yee Harrrr.",
+          "eventName": "?",
+          "dateTaken": "?"
+        },
+        {
+          "_template": "galleryItem",
+          "title": "New Gallery Item xuziphsvfa",
+          "image": "//daydreambelieversuploads.greenash.net.au/gallery-item/photo-1-2016-03-03-01-33-28.JPG"
+        },
+        {
+          "_template": "galleryItem",
+          "title": "People Singing",
+          "image": "//daydreambelieversuploads.greenash.net.au/gallery-item/daydream-believers-sittingsinging-2015-08-11-03-19-17.jpg",
+          "content": "Laaaaa!!",
+          "eventName": "?",
+          "dateTaken": "?"
+        },
+        {
+          "_template": "galleryItem",
+          "title": "New Gallery Item cmzyswsqko",
+          "image": "//daydreambelieversuploads.greenash.net.au/gallery-item/FB_IMG_1471998344230-2016-08-24-00-27-20.jpg"
         }
       ]
     }
