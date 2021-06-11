@@ -10,5 +10,8 @@ module.exports = {
     S3_READ_URL: process.env.S3_READ_URL,
     S3_SERVER_SIDE_ENCRYPTION: process.env.S3_SERVER_SIDE_ENCRYPTION,
   },
+  images: {
+    domains: [process.env.S3_READ_URL.replace('//', '')],
+  },
   target: 'serverless',
 }

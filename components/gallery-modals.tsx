@@ -5,6 +5,7 @@ export default function GalleryModals({ blocks }) {
     .filter(block => block && block.galleryItems)
     .map(block => block.galleryItems)
     .flat(1)
+
   return <>
     {galleryItems.map((galleryItem, index) =>
       <div className="portfolio-modal modal fade" id={`galleryModal${index+1}`} tabIndex={-1} role="dialog" aria-hidden="true" key={`${index+1}`}>

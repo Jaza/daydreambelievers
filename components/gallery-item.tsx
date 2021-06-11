@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { useCMS } from 'tinacms'
 import { BlocksControls, InlineImage } from 'react-tinacms-inline'
 
@@ -16,6 +17,9 @@ export function GalleryItem({ index, title }) {
     }
   }, [cms.enabled])
 
+  const isProd = process.env.NODE_ENV === 'production'
+  const urlProtocol = isProd ? 'https' : 'http'
+
   return (
     <a href={`#galleryModal${index + 1}`} className="portfolio-link" data-toggle="modal">
       <div className="caption">
@@ -28,9 +32,12 @@ export function GalleryItem({ index, title }) {
         parse={media => media.previewSrc}
         uploadDir={() => '/gallery-item/'}
       >
-        {props => <img
-          src={props.src}
+        {props => <Image
+          src={`${urlProtocol}:${props.src}`}
           alt={title}
+          width={400}
+          height={300}
+          objectFit="cover"
           className="img-responsive"
         />}
       </InlineImage>
