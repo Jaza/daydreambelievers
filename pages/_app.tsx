@@ -66,7 +66,6 @@ export default class Site extends App {
               onLogout={() => {}}
             >
               <Component {...pageProps} />
-              <EditLink cms={this.cms} />
             </S3Provider>
           </TinacmsGithubProvider>
         </TinaProvider>
@@ -111,16 +110,4 @@ const onS3Login = () => {
   if (Cookies.get(S3_SESSION_TOKEN)) {
     window.location.href = window.location.pathname
   }
-}
-
-export interface EditLinkProps {
-  cms: TinaCMS
-}
-
-export const EditLink = ({ cms }: EditLinkProps) => {
-  return (
-    <button onClick={() => cms.toggle()}>
-      {cms.enabled ? 'Exit Edit Mode' : 'Edit This Site'}
-    </button>
-  )
 }

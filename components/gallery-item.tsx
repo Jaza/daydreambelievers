@@ -9,11 +9,19 @@ export function GalleryItem({ index, title }) {
   const [editorRegistered, setEditorRegistered] = useState(false)
 
   useEffect(() => {
+    let isSubscribed = true
+
     if (!editorRegistered && cms.enabled) {
       import("react-tinacms-editor").then(({ MarkdownFieldPlugin }) => {
-        cms.plugins.add(MarkdownFieldPlugin)
-        setEditorRegistered(true)
+        if (isSubscribed) {
+          cms.plugins.add(MarkdownFieldPlugin)
+          setEditorRegistered(true)
+        }
       })
+    }
+
+    return () => {
+      isSubscribed = false
     }
   }, [cms.enabled])
 

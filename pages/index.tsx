@@ -22,6 +22,7 @@ export default function Home({ file, preview }) {
     fields: [
       { name: 'title', component: 'text' },
       { name: 'heroImage', component: 'image' },
+      { name: 'footerCopyrightText', component: 'text' },
     ],
   }
 
@@ -33,10 +34,10 @@ export default function Home({ file, preview }) {
   return (
     <InlineForm form={form}>
       <Layout title={pageData.title}>
-        <Hero form={form} title={pageData.title} />
+        <Hero title={pageData.title} />
         <InlineBlocks name="blocks" blocks={HOME_BLOCKS} />
+        <GalleryModals blocks={pageData.blocks} />
       </Layout>
-      <GalleryModals blocks={pageData.blocks} />
     </InlineForm>
   )
 }
