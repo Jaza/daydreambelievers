@@ -1,6 +1,12 @@
 import { Component } from 'react'
+import { CMS } from '@tinacms/core'
 
-class Nav extends Component {
+interface NavProps {
+  title: string
+  cms: CMS
+}
+
+class Nav extends Component<NavProps> {
   shouldComponentUpdate() {
     return false
   }
