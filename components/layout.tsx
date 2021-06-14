@@ -5,9 +5,13 @@ import Nav from './nav'
 
 export default function Layout({ children, title }) {
   const cms = useCMS()
+  const navProps = {
+    title,
+    cms,
+  }
   return <>
     <HtmlHead title={title} />
-    <Nav title={title} cms={cms} />
+    <Nav {...navProps} />
 
     {children}
   </>
