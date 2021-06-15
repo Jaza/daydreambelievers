@@ -1,17 +1,39 @@
 // TODO: get rid of this custom InlineBlocks once
 // https://github.com/tinacms/tinacms/pull/1852 is merged
 
+import * as React from 'react'
 import { useCMS } from 'tinacms'
 import {
   AddBlockMenu,
+  Block,
   BlocksContainerProps,
   BlocksEmptyState,
   InlineBlock,
   InlineBlocksContext,
-  InlineBlocksProps,
   InlineField,
   useInlineForm,
 } from 'react-tinacms-inline'
+
+export interface InlineBlocksProps {
+  name: string
+  blocks: {
+    [key: string]: Block
+  }
+  className?: string
+  direction?: 'vertical' | 'horizontal'
+  /**
+   * object will be spread to every block child element
+   */
+  itemProps?: {
+    [key: string]: any
+  }
+  min?: number
+  max?: number
+  components?: {
+    Container?: React.FunctionComponent<BlocksContainerProps>
+  }
+  children?: React.ReactNode | null
+}
 
 const DefaultContainer = (props: BlocksContainerProps) => {
   return <div {...props} />

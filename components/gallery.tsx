@@ -6,7 +6,7 @@ import { galleryItemBlock } from './gallery-item'
 // https://github.com/tinacms/tinacms/pull/1852 is merged
 import { InlineBlocks } from './inline-blocks'
 
-export function GalleryItems() {
+export function GalleryShowMoreButton() {
   const blocks = useInlineBlocks()
   const cms = useCMS()
 
@@ -41,7 +41,7 @@ export function Gallery({ index }) {
         <BlocksControls index={index} focusRing={{ offset: 0 }} insetControls>
           <div className="row">
             <InlineBlocks name="galleryItems" blocks={GALLERY_BLOCKS}>
-              <GalleryItems />
+              <GalleryShowMoreButton />
             </InlineBlocks>
           </div>
         </BlocksControls>
