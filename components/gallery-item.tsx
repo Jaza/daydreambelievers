@@ -1,4 +1,3 @@
-import React from 'react'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { useCMS } from 'tinacms'
@@ -54,13 +53,22 @@ export function GalleryItem({ index, title }) {
 }
 
 export const galleryItemBlock = {
-  Component: ({ index, data }) => (
-    <div className="col-sm-4 portfolio-item">
-      <BlocksControls index={index}>
-        <GalleryItem index={index} {...data} />
-      </BlocksControls>
-    </div>
-  ),
+  Component: ({ index, data }) => {
+    const cms = useCMS()
+    const divClasses =
+      'col-sm-4 portfolio-item'
+      + (index >= 6 && !cms.enabled
+        ? ' hidden'
+        : ''
+      )
+    return (
+      <div className={divClasses}>
+        <BlocksControls index={index}>
+          <GalleryItem index={index} {...data} />
+        </BlocksControls>
+      </div>
+    )
+  },
   template: {
     label: 'Gallery item',
     defaultItem: {
