@@ -1,3 +1,5 @@
+import Moment from 'react-moment'
+import 'moment-timezone';
 import { BlocksControls, InlineText } from 'react-tinacms-inline'
 
 export function EventItem({ index, startDatetime, endDatetime, locationName }) {
@@ -5,9 +7,15 @@ export function EventItem({ index, startDatetime, endDatetime, locationName }) {
     <div className="date-label-wrapper col-sm-2">
       {startDatetime &&
         <p className="date-label">
-          <span className="date-number">{startDatetime}</span>
-          <span className="month">{startDatetime}</span>
-          <span className="year-number">{startDatetime}</span>
+          <span className="date-number">
+            <Moment format="DD" tz="UTC">{startDatetime}</Moment>
+          </span>
+          <span className="month">
+            <Moment format="MMM" tz="UTC">{startDatetime}</Moment>
+          </span>
+          <span className="year-number">
+            <Moment format="YYYY" tz="UTC">{startDatetime}</Moment>
+          </span>
         </p>
       }
     </div>
@@ -19,10 +27,12 @@ export function EventItem({ index, startDatetime, endDatetime, locationName }) {
         {startDatetime &&
           <span className="time">
             <i className="fa fa-clock-o fa-fw" />
-            {startDatetime}
+            <Moment format="h:mma" tz="UTC">{startDatetime}</Moment>
             {endDatetime &&
-              -
-              {endDatetime}
+              <>
+                &nbsp;-&nbsp;
+                <Moment format="h:mma" tz="UTC">{endDatetime}</Moment>
+              </>
             }
           </span>
         }
