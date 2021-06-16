@@ -2,7 +2,7 @@ import Moment from 'react-moment'
 import 'moment-timezone';
 import { BlocksControls, InlineText } from 'react-tinacms-inline'
 
-export function EventItem({ index, startDatetime, endDatetime, locationName }) {
+export function EventItem({ index, startDatetime, endDatetime }) {
   return <>
     <div className="date-label-wrapper col-sm-2">
       {startDatetime &&
@@ -23,9 +23,9 @@ export function EventItem({ index, startDatetime, endDatetime, locationName }) {
       <h4>
         <InlineText name="title" />
       </h4>
-      <p className="meta">
+      <div className="meta">
         {startDatetime &&
-          <span className="time">
+          <p className="time" style={{ marginBottom: "0" }}>
             <i className="fa fa-clock-o fa-fw" />
             <Moment format="h:mma" tz="UTC">{startDatetime}</Moment>
             {endDatetime &&
@@ -34,18 +34,13 @@ export function EventItem({ index, startDatetime, endDatetime, locationName }) {
                 <Moment format="h:mma" tz="UTC">{endDatetime}</Moment>
               </>
             }
-          </span>
+          </p>
         }
-        {(startDatetime || locationName) &&
-          <br />
-        }
-        {locationName &&
-          <span className="location">
-            <i className="fa fa-map-marker fa-fw" />
-            {locationName}
-          </span>
-        }
-      </p>
+        <p className="location">
+          <i className="fa fa-map-marker fa-fw" />
+          <InlineText name="locationName" />
+        </p>
+      </div>
     </div>
     <div style={{ clear: "both" }} />
   </>
