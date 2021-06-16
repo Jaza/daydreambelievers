@@ -47,6 +47,7 @@ export function EventItem({ index, startDatetime, endDatetime, locationName }) {
         }
       </p>
     </div>
+    <div style={{ clear: "both" }} />
   </>
 }
 
