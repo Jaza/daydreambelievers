@@ -1,4 +1,4 @@
-import { InlineImage, InlineTextarea } from 'react-tinacms-inline'
+import { InlineImage, InlineText, InlineTextarea } from 'react-tinacms-inline'
 
 export default function Hero({ title }) {
   return (
@@ -22,7 +22,9 @@ export default function Hero({ title }) {
                 <InlineTextarea name="title" />
               </span>
               <hr className="star-primary" />
-              <span className="skills">Singing - Dancing - Music</span>
+              <div className="skills">
+                <InlineText name="byline" />
+              </div>
             </div>
           </div>
         </div>

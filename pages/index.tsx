@@ -21,6 +21,7 @@ export default function Home({ file, preview }) {
     label: 'Home Page',
     fields: [
       { name: 'title', component: 'text' },
+      { name: 'byline', component: 'text' },
       { name: 'heroImage', component: 'image' },
       { name: 'footerCopyrightText', component: 'text' },
     ],
