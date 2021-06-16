@@ -11,6 +11,7 @@ import {
 import { InlineForm, InlineBlocks } from 'react-tinacms-inline'
 import { usePlugin } from 'tinacms'
 import { GetStaticProps } from 'next'
+import { eventsBlock } from '../components/events'
 import { galleryBlock } from '../components/gallery'
 import GalleryModals from '../components/gallery-modals'
 import Hero from '../components/hero'
@@ -69,4 +70,5 @@ export const getStaticProps: GetStaticProps = async function ({
 
 const HOME_BLOCKS = {
   gallery: galleryBlock,
+  events: eventsBlock,
 }

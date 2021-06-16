@@ -11,16 +11,16 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "next": "10.2.0",
-    "next-tinacms-github": "^0.40.0",
+    "next-tinacms-github": "^0.41.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-markdown": "^6.0.2",
-    "react-tinacms-editor": "^0.41.0",
-    "react-tinacms-github": "^0.40.0",
-    "react-tinacms-inline": "^0.40.0",
+    "react-tinacms-editor": "^0.41.1",
+    "react-tinacms-github": "^0.41.1",
+    "react-tinacms-inline": "^0.41.1",
     "react-tinacms-s3": "github:Jaza/react-tinacms-s3#b81acaa",
     "styled-components": "^5.2.3",
-    "tinacms": "^0.40.0"
+    "tinacms": "^0.41.1"
   },
   "devDependencies": {
     "@types/node": "^15.0.1",
