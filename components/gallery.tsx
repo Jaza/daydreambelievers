@@ -1,21 +1,27 @@
 import React from 'react'
 import { useCMS } from 'tinacms'
 import { BlocksControls, InlineText, useInlineBlocks } from 'react-tinacms-inline'
+import { GalleryContext, useGallery } from './gallery-context'
 import { galleryItemBlock } from './gallery-item'
 // TODO: get rid of this custom InlineBlocks once
 // https://github.com/tinacms/tinacms/pull/1852 is merged
 import { InlineBlocks } from './inline-blocks'
 
-export function GalleryShowMoreButton() {
+export function GalleryShowMoreButton({ toggleVisible }) {
   const blocks = useInlineBlocks()
+  const galleryContext = useGallery()
   const cms = useCMS()
 
   return <>
-    {blocks.count > 6 && !cms.enabled &&
+    {blocks.count > 6 && !cms.enabled && !galleryContext.visible &&
       <div className="row">
         <div className="col-lg-12 text-center">
           <div className="form-add-plus">
-            <a className="add-plus" style={{ cursor: "pointer" }}>
+            <a
+              className="add-plus"
+              style={{ cursor: "pointer" }}
+              onClick={toggleVisible}
+            >
               <div className="add-plus-caption">&nbsp;<span>Show more</span>&nbsp;</div>
               <div className="add-plus-wrapper"><span className="fa fa-plus"></span></div>
             </a>
@@ -27,6 +33,12 @@ export function GalleryShowMoreButton() {
 }
 
 export function Gallery({ index }) {
+  const [visible, setVisible] = React.useState(false)
+
+  const toggleVisible = () => {
+    setVisible(visible => !visible)
+  }
+
   return (
     <section id="gallery" className="portfolio">
       <div className="container">
@@ -40,9 +52,16 @@ export function Gallery({ index }) {
         </div>
         <BlocksControls index={index} focusRing={{ offset: 0 }} insetControls>
           <div className="row">
-            <InlineBlocks name="galleryItems" blocks={GALLERY_BLOCKS}>
-              <GalleryShowMoreButton />
-            </InlineBlocks>
+            <GalleryContext.Provider
+              value={{
+                visible,
+                toggleVisible,
+              }}
+            >
+              <InlineBlocks name="galleryItems" blocks={GALLERY_BLOCKS}>
+                <GalleryShowMoreButton toggleVisible={toggleVisible} />
+              </InlineBlocks>
+            </GalleryContext.Provider>
           </div>
         </BlocksControls>
       </div>

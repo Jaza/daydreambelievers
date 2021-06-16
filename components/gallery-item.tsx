@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { useCMS } from 'tinacms'
 import { BlocksControls, InlineImage } from 'react-tinacms-inline'
+import { useGallery } from './gallery-context'
 
 export function GalleryItem({ index, title }) {
   const cms = useCMS()
@@ -55,9 +56,10 @@ export function GalleryItem({ index, title }) {
 export const galleryItemBlock = {
   Component: ({ index, data }) => {
     const cms = useCMS()
+    const galleryContext = useGallery()
     const divClasses =
       'col-sm-4 portfolio-item'
-      + (index >= 6 && !cms.enabled
+      + (index >= 6 && !cms.enabled && !galleryContext.visible
         ? ' hidden'
         : ''
       )
