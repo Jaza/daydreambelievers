@@ -101,6 +101,13 @@
           "startDatetime": "2016-10-30T14:00:00Z",
           "endDatetime": "2016-10-30T15:00:00Z",
           "locationName": "COA 25 Rowe St Woollahra 2025"
+        },
+        {
+          "_template": "eventItem",
+          "title": "Concert at mark moran little bay",
+          "locationName": "1420 Anzac Pde, Little Bay 2036",
+          "startDatetime": "2016-07-24T14:00:00Z",
+          "endDatetime": "2016-07-24T15:00:00Z"
         }
       ]
     }
