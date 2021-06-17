@@ -36,10 +36,10 @@ export function EventItem({ index, startDatetime, endDatetime }) {
             }
           </p>
         }
-        <p className="location">
+        <div className="location" style={{ fontSize: "20px" }}>
           <i className="fa fa-map-marker fa-fw" />
           <InlineText name="locationName" />
-        </p>
+        </div>
       </div>
     </div>
     <div style={{ clear: "both" }} />
