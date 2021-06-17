@@ -110,6 +110,24 @@
           "endDatetime": "2016-07-24T15:00:00Z"
         }
       ]
+    },
+    {
+      "_template": "sponsors",
+      "title": "Sponsors",
+      "galleryItems": [
+        {
+          "_template": "sponsorItem",
+          "title": "Sponsor"
+        }
+      ],
+      "sponsorItems": [
+        {
+          "_template": "sponsorItem",
+          "title": "Intelligent Finance",
+          "image": "//daydreambelieversuploads.greenash.net.au/sponsor-item/intelligent-finance-logo-2015-08-18-05-02-44.png",
+          "websiteUrl": "https://intelligentfinance.com.au/"
+        }
+      ]
     }
   ],
   "footerCopyrightText": "Copyright © The Daydream Believers Performers 2015",
