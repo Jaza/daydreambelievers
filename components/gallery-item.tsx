@@ -84,6 +84,12 @@ export const galleryItemBlock = {
         component: 'text',
       },
       {
+        name: 'image',
+        label: 'Image',
+        component: 'image',
+        uploadDir: () => '/gallery-item/',
+      },
+      {
         name: 'content',
         label: 'Content',
         component: 'markdown',

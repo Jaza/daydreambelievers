@@ -13,6 +13,7 @@ import { usePlugin } from 'tinacms'
 import { GetStaticProps } from 'next'
 import { eventsBlock } from '../components/events'
 import { galleryBlock } from '../components/gallery'
+import { sponsorsBlock } from '../components/sponsors'
 import GalleryModals from '../components/gallery-modals'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
@@ -71,4 +72,5 @@ export const getStaticProps: GetStaticProps = async function ({
 const HOME_BLOCKS = {
   gallery: galleryBlock,
   events: eventsBlock,
+  sponsors: sponsorsBlock,
 }
