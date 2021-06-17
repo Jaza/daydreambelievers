@@ -22,10 +22,26 @@ export default function Home({ file, preview }) {
   const formOptions = {
     label: 'Home Page',
     fields: [
-      { name: 'title', component: 'text' },
-      { name: 'byline', component: 'text' },
-      { name: 'heroImage', component: 'image' },
-      { name: 'footerCopyrightText', component: 'text' },
+      {
+        name: 'title',
+        component: 'text',
+        label: 'Title',
+      },
+      {
+        name: 'byline',
+        component: 'text',
+        label: 'Byline',
+      },
+      {
+        name: 'heroImage',
+        component: 'image',
+        label: 'Hero image',
+      },
+      {
+        name: 'footerCopyrightText',
+        component: 'text',
+        label: 'Footer copyright text',
+      },
     ],
   }
 
