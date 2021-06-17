@@ -71,6 +71,7 @@ export default class Site extends App {
         </TinaProvider>
         <script src="/libs/startbootstrap-freelancer/js/jquery.js" />
         <script src="/libs/startbootstrap-freelancer/js/bootstrap.js" />
+        <script src="/libs/jquery-easing/jquery.easing.js" />
         <script src="/libs/startbootstrap-freelancer/js/classie.js" />
         <script src="/libs/startbootstrap-freelancer/js/cbpAnimatedHeader.js" />
         <script src="/libs/startbootstrap-freelancer/js/freelancer.js" />
