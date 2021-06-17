@@ -3,7 +3,7 @@ import { useCMS } from 'tinacms'
 
 export function InlineWysiwyg(props) {
   const cms = useCMS()
-  const [{ InlineWysiwyg }, setEditor] = useState({})
+  const [{ InlineWysiwyg }, setEditor] = useState({} as any)
 
   useEffect(() => {
     let isSubscribed = true
