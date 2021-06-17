@@ -20,7 +20,7 @@ import Layout from '../components/layout'
 
 export default function Home({ file, preview }) {
   const formOptions = {
-    label: 'Home Page',
+    label: 'Page',
     fields: [
       {
         name: 'title',
@@ -28,14 +28,23 @@ export default function Home({ file, preview }) {
         label: 'Title',
       },
       {
+        name: 'heroImage',
+        component: 'image',
+        label: 'Hero image',
+      },
+      {
         name: 'byline',
         component: 'text',
         label: 'Byline',
       },
       {
-        name: 'heroImage',
-        component: 'image',
-        label: 'Hero image',
+        name: 'blocks',
+        component: 'blocks',
+        label: 'Blocks',
+        templates: Object.keys(HOME_BLOCKS).reduce((r, k) => {
+          r[k] = HOME_BLOCKS[k].template
+          return r
+        }, {}),
       },
       {
         name: 'footerCopyrightText',
