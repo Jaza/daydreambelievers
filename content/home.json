@@ -141,6 +141,10 @@
       "aboutTextLeftColumn": "The Daydream Believers is an inclusive singing group. We perform regularly at local nursing homes around Sydney's eastern suburbs and bring much joy to others and ourselves.",
       "aboutTextRightColumn": "We rehearse every Thursday at 5.30pm until 7pm at the COA, 25 Rowe Street, Woollahra 2025.  We perform at old age homes and nursing homes.",
       "aboutTextBelowColumns": "Everyone is welcome."
+    },
+    {
+      "_template": "contact",
+      "title": "Contact"
     }
   ],
   "footerCopyrightText": "Copyright © The Daydream Believers Performers 2015",
