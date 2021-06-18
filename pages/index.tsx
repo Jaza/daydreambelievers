@@ -12,6 +12,7 @@ import { InlineForm, InlineBlocks } from 'react-tinacms-inline'
 import { usePlugin } from 'tinacms'
 import { GetStaticProps } from 'next'
 import { aboutBlock } from '../components/about'
+import { contactBlock } from '../components/contact'
 import { eventsBlock } from '../components/events'
 import { galleryBlock } from '../components/gallery'
 import { sponsorsBlock } from '../components/sponsors'
@@ -100,4 +101,5 @@ const HOME_BLOCKS = {
   events: eventsBlock,
   sponsors: sponsorsBlock,
   about: aboutBlock,
+  contact: contactBlock,
 }

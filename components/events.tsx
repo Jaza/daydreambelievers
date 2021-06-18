@@ -3,17 +3,17 @@ import { eventItemBlock } from './event-item'
 
 export function Events({ index }) {
   return (
-    <section id="events">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12 text-center" style={{ position: "static" }}>
-            <h2>
-              <InlineText name="title" />
-            </h2>
-            <hr className="star-primary" />
+    <BlocksControls index={index} focusRing={{ offset: 0 }} insetControls>
+      <section id="events">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12 text-center" style={{ position: "static" }}>
+              <h2>
+                <InlineText name="title" />
+              </h2>
+              <hr className="star-primary" />
+            </div>
           </div>
-        </div>
-        <BlocksControls index={index} focusRing={{ offset: 0 }} insetControls>
           <div className="row">
             <div className="col-lg-5 col-lg-offset-1 col-sm-6">
               <h3>Upcoming</h3>
@@ -24,9 +24,9 @@ export function Events({ index }) {
               <InlineBlocks name="eventItems" blocks={EVENTS_BLOCKS} />
             </div>
           </div>
-        </BlocksControls>
-      </div>
-    </section>
+        </div>
+      </section>
+    </BlocksControls>
   )
 }
 

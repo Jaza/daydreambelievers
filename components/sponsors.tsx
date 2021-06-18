@@ -3,25 +3,25 @@ import { sponsorItemBlock } from './sponsor-item'
 
 export function Sponsors({ index }) {
   return (
-    <section id="sponsors">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12 text-center" style={{ position: "static" }}>
-            <h2>
-              <InlineText name="title" />
-            </h2>
-            <hr className="star-light" />
+    <BlocksControls index={index} focusRing={{ offset: 0 }} insetControls>
+      <section id="sponsors">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12 text-center" style={{ position: "static" }}>
+              <h2>
+                <InlineText name="title" />
+              </h2>
+              <hr className="star-light" />
+            </div>
           </div>
-        </div>
-        <BlocksControls index={index} focusRing={{ offset: 0 }} insetControls>
           <div className="row">
             <div className="col-lg-12 text-center">
               <InlineBlocks name="sponsorItems" blocks={SPONSORS_BLOCKS} />
             </div>
           </div>
-        </BlocksControls>
-      </div>
-    </section>
+        </div>
+      </section>
+    </BlocksControls>
   )
 }
 

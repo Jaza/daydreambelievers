@@ -40,17 +40,17 @@ export function Gallery({ index }) {
   }
 
   return (
-    <section id="gallery" className="portfolio">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12 text-center" style={{ position: "static" }}>
-            <h2>
-              <InlineText name="title" />
-            </h2>
-            <hr className="star-light" />
+    <BlocksControls index={index} focusRing={{ offset: 0 }} insetControls>
+      <section id="gallery" className="portfolio">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12 text-center" style={{ position: "static" }}>
+              <h2>
+                <InlineText name="title" />
+              </h2>
+              <hr className="star-light" />
+            </div>
           </div>
-        </div>
-        <BlocksControls index={index} focusRing={{ offset: 0 }} insetControls>
           <div className="row">
             <GalleryContext.Provider
               value={{
@@ -63,9 +63,9 @@ export function Gallery({ index }) {
               </InlineBlocks>
             </GalleryContext.Provider>
           </div>
-        </BlocksControls>
-      </div>
-    </section>
+        </div>
+      </section>
+    </BlocksControls>
   )
 }
 
