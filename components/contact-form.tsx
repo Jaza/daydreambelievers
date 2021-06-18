@@ -22,7 +22,7 @@ export default function ContactForm() {
       <div className="row control-group">
         <div className="form-group col-xs-12 floating-label-form-group controls">
           <label htmlFor="message">Message</label>
-          <textarea rows="5" className="form-control" placeholder="Message" id="message" name="message" required />
+          <textarea rows=5 className="form-control" placeholder="Message" id="message" name="message" required />
         </div>
       </div>
       <br />
