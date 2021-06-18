@@ -1,6 +1,7 @@
 export default function ContactForm() {
   return (
-    <form name="contact" method="POST" className="form">
+    <form name="contact" action="/success" method="POST" className="form" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
       <div className="row control-group">
         <div className="form-group col-xs-12 floating-label-form-group controls">
           <label htmlFor="name">Name</label>
