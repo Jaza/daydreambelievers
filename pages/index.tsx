@@ -16,6 +16,7 @@ import { contactBlock } from '../components/contact'
 import { eventsBlock } from '../components/events'
 import { galleryBlock } from '../components/gallery'
 import { sponsorsBlock } from '../components/sponsors'
+import Footer from '../components/footer'
 import FooterAbove from '../components/footer-above'
 import GalleryModals from '../components/gallery-modals'
 import Hero from '../components/hero'
@@ -68,7 +69,10 @@ export default function Home({ file, preview }) {
         <Hero title={pageData.title} />
         <InlineBlocks name="blocks" blocks={HOME_BLOCKS} />
         <GalleryModals blocks={pageData.blocks} />
-        <FooterAbove data={pageData} />
+        <footer className="text-center">
+          <FooterAbove data={pageData} />
+          <Footer />
+        </footer>
       </Layout>
     </InlineForm>
   )
