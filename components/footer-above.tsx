@@ -19,6 +19,18 @@ export default function FooterAbove({ data }) {
               </InlineWysiwyg>
             </div>
           </div>
+          <div className="footer-col col-md-4">
+            <h3>
+              <InlineText name="footerConnectWithUsTitle" />
+            </h3>
+            <ul className="list-inline">
+              <li>
+                <a href={data.footerConnectWithUsUrl} className="btn-social btn-outline">
+                  <i className="fa fa-fw fa-facebook" />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

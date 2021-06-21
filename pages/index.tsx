@@ -51,6 +51,11 @@ export default function Home({ file, preview }) {
         }, {}),
       },
       {
+        name: 'footerConnectWithUsUrl',
+        component: 'text',
+        label: 'Footer connect with us URL',
+      },
+      {
         name: 'footerCopyrightText',
         component: 'text',
         label: 'Footer copyright text',
