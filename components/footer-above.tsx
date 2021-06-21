@@ -1,5 +1,5 @@
 import ReactMarkdown from 'react-markdown'
-import { InlineText } from 'react-tinacms-inline'
+import { InlineImage, InlineText } from 'react-tinacms-inline'
 import { InlineWysiwyg } from './inline-wysiwyg'
 
 export default function FooterAbove({ data }) {
@@ -30,6 +30,29 @@ export default function FooterAbove({ data }) {
                 </a>
               </li>
             </ul>
+          </div>
+          <div className="footer-col col-md-4">
+            <h3>
+              <InlineText name="musicalDirectorTitle" />
+            </h3>
+            <InlineImage
+              name="musicalDirectorImage"
+              parse={media => media.previewSrc}
+              uploadDir={() => '/musical-director-image/'}
+            >
+              {props => <img
+                src={props.src}
+                alt={data.musicalDirectorTitle}
+                className="img-responsive img-circle img-lesswidth"
+              />}
+            </InlineImage>
+            <div className="musical-director-text">
+              <InlineWysiwyg name="musicalDirectorText" format="markdown">
+                <ReactMarkdown>
+                  {data.musicalDirectorText}
+                </ReactMarkdown>
+              </InlineWysiwyg>
+            </div>
           </div>
         </div>
       </div>
