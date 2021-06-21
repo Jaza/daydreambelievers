@@ -531,3 +531,7 @@ footer .footer-below {
 .musical-director-text p {
   margin-bottom: 0;
 }
+
+.musical-director-image-container {
+  width: 100% !important;
+}

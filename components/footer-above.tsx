@@ -39,6 +39,7 @@ export default function FooterAbove({ data }) {
               name="musicalDirectorImage"
               parse={media => media.previewSrc}
               uploadDir={() => '/musical-director-image/'}
+              className="musical-director-image-container"
             >
               {props => <img
                 src={props.src}
